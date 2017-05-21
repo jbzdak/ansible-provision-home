@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - file:
+      path: "{{ extras_root }}"
+      state: "directory"
+- hosts: all
+  become: true
+  roles:
+  - role: jbzdak.gcloud-sdk

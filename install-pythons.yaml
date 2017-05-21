@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - file:
+      path: "{{ extras_root }}"
+      state: "directory"
+- hosts: all
+  become: true
+  roles:
+  - role: jbzdak.compile-python
+    python: "{{ python2_7_13 }}"
+  - role: jbzdak.compile-python
+    python: "{{ python3_6_1 }}"
+  - role: jbzdak.compile-python
+    python: "{{ python3_5_3 }}"

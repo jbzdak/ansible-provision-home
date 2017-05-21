@@ -1,0 +1,49 @@
+
+extras_root: /tmp/install
+
+python2_7_13:
+  do_tests: true
+  location: "{{ extras_root }}/python/2.7.13"
+  version: 2.7.13
+  compilation:
+    build_dep:
+     - python
+    dependencies: []
+  download:
+    url: "https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tar.xz"
+    sha256sum: "35d543986882f78261f97787fd3e06274bfa6df29fac9b4a94f73930ff98f731"
+
+python3_6_1:
+  # Fail currently due to: https://bugs.python.org/issue30175 and https://bugs.python.org/issue30175
+  do_tests: false
+  location: "{{ extras_root }}/python/3.6.1"
+  version: 3.6.1
+  compilation:
+    build_dep:
+     - python3.4
+    dependencies: []
+  download:
+    url: "https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz"
+    sha256sum: "a01810ddfcec216bcdb357a84bfaafdfaa0ca42bbdaa4cb7ff74f5a9961e4041"
+
+python3_5_3:
+  do_tests: true
+  location: "{{ extras_root }}/python/3.5.3"
+  version: 3.5.3
+  compilation:
+    build_dep:
+     - python3.4
+    dependencies: []
+  download:
+    url: "https://www.python.org/ftp/python/3.5.3/Python-3.5.3.tar.xz"
+    sha256sum: "eefe2ad6575855423ab630f5b51a8ef6e5556f774584c06beab4926f930ddbb0"
+
+
+gcloud_sdk:
+  add_to_path_for: []
+  destination: "{{ extras_root }}/opt/gcloud-sdk"
+  download:
+    url: https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-155.0.0-linux-x86_64.tar.gz
+    sha256: 4b64fba9d98b9e48cc7a37ed3b321e50f92e87f9c2b358d183f966dae05216a2
+  dependencies:
+    - python

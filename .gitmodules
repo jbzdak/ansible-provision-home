@@ -1,0 +1,6 @@
+[submodule "roles/jbzdak.gcloud-sdk"]
+	path = roles/jbzdak.gcloud-sdk
+	url = https://github.com/jbzdak/ansible-gcloud-sdk
+[submodule "roles/jbzdak.compile-python"]
+	path = roles/jbzdak.compile-python
+	url = git@github.com:jbzdak/ansible-compile-python.git
